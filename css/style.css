@@ -39,6 +39,28 @@ nav a:hover{
     color: #2980b9;
 }
 
+footer {
+    background-color: #000a23;
+    color: white;
+    padding: 0;
+}
+
+footer table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+footer td {
+    padding: 12px 15px;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+    color: white;
+    font-size: 0.95rem;
+}
+
 h1 {
     color: white;
 }
