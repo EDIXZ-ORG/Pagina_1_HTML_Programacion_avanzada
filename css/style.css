@@ -1,39 +1,12 @@
 body {
-    margin: 0;
     background-color: rgba(0, 0, 0, 0.0);
     font-family: 'Times new roman', Tahoma, Geneva, Verdana, sans-serif;
     color: #333333;
     line-height: 1.6;
 }
 
-table {
-    border-collapse: collapse;
-}
-
 th, td{
     border: none;
-    vertical-align: top;
-}
-
-main {
-    padding-right: 10px;
-    box-sizing: border-box;
-}
-
-aside {
-    background-color: #f3f5f7;
-    border: 1px solid #d7dce3;
-    border-radius: 8px;
-    padding: 15px;
-    margin-left: 10px;
-    box-sizing: border-box;
-    min-height: 100%;
-}
-
-aside p {
-    margin: 0;
-    color: #1d2a39;
-    font-weight: 600;
 }
 
 header{
@@ -64,6 +37,28 @@ nav a{
 
 nav a:hover{
     color: #2980b9;
+}
+
+footer {
+    background-color: #000a23;
+    color: white;
+    padding: 0;
+}
+
+footer table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+footer td {
+    padding: 12px 15px;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+    color: white;
+    font-size: 0.95rem;
 }
 
 h1 {
