@@ -87,3 +87,19 @@ a {
 li {
     color: black;
 }
+
+.anuncio{
+    background-color: #000a23;
+    border: 3px solid #e0e0e0;
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    position: sticky;
+    top: 20px;
+}
+
+.anuncio img{
+    width: 70%;
+    height: auto;
+    border-radius: 4px;
+}
