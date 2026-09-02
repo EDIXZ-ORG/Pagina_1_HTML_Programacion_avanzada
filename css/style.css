@@ -40,7 +40,10 @@ nav a:hover{
 }
 
 footer {
-    background-color: #000a23;
+    background-image: url('../imagenes/the-hacker-matrix.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
     padding: 0;
 }
@@ -97,8 +100,10 @@ li {
 }
 
 .asideColor {
-  background-color: #6b95ff;
+  background-image: url('../imagenes/colombia-flag.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
-  padding: 10px;
   border-radius: 8px;
 }
