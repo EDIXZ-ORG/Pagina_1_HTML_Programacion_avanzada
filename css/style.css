@@ -84,8 +84,6 @@ li {
 }
 
 .anuncio {
-  background-color: #000a23;
-  border: 3px solid #e0e0e0;
   padding: 5px;
   border-radius: 8px;
   text-align: center;
@@ -96,4 +94,11 @@ li {
   height: 100%;
   object-fit: cover;
   border-radius: 4px;
+}
+
+.asideColor {
+  background-color: #6b95ff;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
 }
