@@ -10,15 +10,21 @@ th, td{
 }
 
 header{
-    background-color: #000a23;
+    background-image: url('../imagenes/the-hacker-matrix.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
-    padding: 7px;
+    padding: 0;
     text-align: center;
     font-size: 1.5rem;
 }
 
 nav{
-    background-color: #000a23;
+    background-image: url('../imagenes/the-hacker-matrix.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     line-height: 1;
     padding: 15px;
     text-align: center;
@@ -99,11 +105,16 @@ li {
   border-radius: 4px;
 }
 
-.asideColor {
+aside {
   background-image: url('../imagenes/colombia-flag.gif');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: white;
   border-radius: 8px;
+}
+
+.celda-visible {
+  border: 2px solid #044708;
+  border-radius: 8px;                 
 }
