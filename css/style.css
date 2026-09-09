@@ -39,7 +39,7 @@ table {
 }
 
 .tabla-casos .celda-imagen {
-    width: 35%;
+    width: 20%;
 }
 
 .columna-contenido,
@@ -53,6 +53,12 @@ table {
 
 .columna-lateral {
     width: 15%;
+    background-image: url('../imagenes/colombia-flag.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border-radius: 8px;
 }
 
 .celda-centrada {
@@ -154,14 +160,30 @@ li {
 }
 
 .anuncio {
-  padding: 5px;
-  border-radius: 8px;
-  text-align: center;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+aside {
+    height: 100%;
+}
+
+.tabla-anuncios {
+    height: 100%;
+    table-layout: fixed;
+}
+
+.tabla-anuncios tr {
+    height: 12.5%;
 }
 
 .anuncio img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     border-radius: 4px;
 }
 
@@ -182,12 +204,7 @@ li {
 }
 
 aside {
-  background-image: url('../imagenes/colombia-flag.gif');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-  border-radius: 8px;
+    background: transparent;
 }
 
 .celda-visible {
