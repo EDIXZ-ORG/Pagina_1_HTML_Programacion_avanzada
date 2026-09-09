@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentacion de style.css</title>
+    <style>
+        body { font-family: Arial, sans-serif; color: #222; line-height: 1.5; margin: 0; padding: 24px; background: #f5f7f8; }
+        main { max-width: 1100px; margin: 0 auto; background: white; padding: 24px; }
+        h1, h2, h3 { color: #123b52; }
+        h2 { border-bottom: 1px solid #176b78; padding-bottom: 4px; margin-top: 32px; }
+        table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; }
+        th, td { border: 1px solid #999; padding: 8px; vertical-align: top; }
+        th { background: #e7f0f2; text-align: left; }
+        code { font-family: Consolas, monospace; color: #8a2d00; }
+        pre { background: #eef1f2; padding: 12px; overflow-x: auto; }
+        .note { background: #eef5f6; padding: 12px; border-left: 4px solid #176b78; }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Documentacion de <code>css/style.css</code></h1>
+    <p>Esta pagina explica solamente los selectores y propiedades que existen actualmente en <code>css/style.css</code>. El CSS principal organiza una pagina construida con tablas, celdas, contenido principal, anuncios y un pie de pagina.</p>
+
+    <h2>1. Como leer CSS</h2>
+    <p>Una regla CSS tiene esta estructura:</p>
+    <pre><code>selector {
+    propiedad: valor;
+}</code></pre>
+    <table>
+        <tr><th>Termino</th><th>Significado</th><th>Ejemplo actual</th></tr>
+        <tr><td>Selector</td><td>Indica que elementos HTML recibiran el estilo.</td><td><code>body</code>, <code>.pagina</code>, <code>nav a</code></td></tr>
+        <tr><td>Propiedad</td><td>Aspecto que se quiere modificar.</td><td><code>color</code>, <code>padding</code>, <code>width</code></td></tr>
+        <tr><td>Valor</td><td>Configuracion de la propiedad.</td><td><code>white</code>, <code>15px</code>, <code>100%</code></td></tr>
+        <tr><td>Clase</td><td>Nombre reutilizable escrito con un punto en CSS y con <code>class</code> en HTML.</td><td><code>.tabla-casos</code></td></tr>
+        <tr><td>Selector agrupado</td><td>Varios selectores separados por comas que comparten reglas.</td><td><code>.columna-contenido, .columna-lateral</code></td></tr>
+        <tr><td>Selector descendiente</td><td>Un espacio indica que el segundo elemento esta dentro del primero.</td><td><code>nav a</code></td></tr>
+        <tr><td>Hijo directo</td><td>El simbolo <code>&gt;</code> exige que el elemento este inmediatamente dentro del anterior.</td><td><code>.pagina &gt; tbody &gt; tr &gt; td</code></td></tr>
+    </table>
+
+    <h2>2. Reglas globales</h2>
+    <h3><code>body</code></h3>
+    <p><code>body</code> contiene todo lo visible. Algunas propiedades de texto pueden heredarse por los elementos internos.</p>
+    <table>
+        <tr><th>Regla</th><th>Funcion</th></tr>
+        <tr><td><code>background-color: transparent</code></td><td>Deja transparente el fondo general.</td></tr>
+        <tr><td><code>font-family: 'Times new roman', Tahoma, Geneva, Verdana, sans-serif</code></td><td>Define una lista de fuentes de respaldo. El navegador prueba la primera disponible y termina usando una familia generica sin serifas.</td></tr>
+        <tr><td><code>color: #333333</code></td><td>Establece el color de texto base. Es un gris oscuro hexadecimal.</td></tr>
+        <tr><td><code>line-height: 1.6</code></td><td>Hace que la altura de cada linea sea 1.6 veces el tamaño de la fuente.</td></tr>
+        <tr><td><code>margin: 0</code></td><td>Elimina el margen exterior predeterminado del navegador.</td></tr>
+    </table>
+    <h3><code>table</code></h3>
+    <p><code>table</code> selecciona todas las tablas, incluso las anidadas.</p>
+    <table>
+        <tr><th>Regla</th><th>Funcion</th></tr>
+        <tr><td><code>border-collapse: collapse</code></td><td>Une los bordes vecinos de las celdas. En el CSS actual no se usa <code>border-spacing</code>.</td></tr>
+    </table>
+
+    <h2>3. Tabla principal y columnas</h2>
+    <h3><code>.pagina</code></h3>
+    <table>
+        <tr><th>Regla</th><th>Funcion</th></tr>
+        <tr><td><code>width: 100%</code></td><td>Hace que la tabla ocupe todo el ancho disponible.</td></tr>
+        <tr><td><code>.pagina &gt; tbody &gt; tr &gt; td { padding: 0; }</code></td><td>Quita el espacio interno de las celdas principales. El navegador suele insertar <code>tbody</code> aunque no se escriba.</td></tr>
+    </table>
+    <p><code>.tabla-completa</code>, <code>.tabla-navegacion</code> y <code>.tabla-anuncios</code> comparten <code>width: 100%</code> porque las tres deben ocupar el ancho disponible.</p>
+
+    <h3><code>.tabla-navegacion</code></h3>
+    <pre><code>.tabla-navegacion td {
+    padding: 0 15px;
+}</code></pre>
+    <p>Las celdas del menu reciben 0 píxeles arriba y abajo, y 15 píxeles a izquierda y derecha. Con dos valores, <code>padding</code> se interpreta como <code>vertical horizontal</code>.</p>
+
+    <h3><code>.columna-contenido</code> y <code>.columna-lateral</code></h3>
+    <table>
+        <tr><th>Clase</th><th>Uso</th><th>Reglas</th></tr>
+        <tr><td><code>.columna-contenido</code></td><td>Celda que contiene <code>main</code>.</td><td><code>vertical-align: top; width: 75%</code></td></tr>
+        <tr><td><code>.columna-lateral</code></td><td>Celda que contiene <code>aside</code> y anuncios.</td><td><code>vertical-align: top; width: 15%</code></td></tr>
+    </table>
+    <p><code>vertical-align: top</code> alinea el contenido al comienzo vertical de la celda. El porcentaje es relativo al ancho de la tabla padre.</p>
+
+    <h3>Fondo de <code>.columna-lateral</code></h3>
+    <table>
+        <tr><th>Regla</th><th>Funcion</th></tr>
+        <tr><td><code>background-image: url('../imagenes/colombia-flag.gif')</code></td><td>Carga el GIF indicado por <code>url()</code>.</td></tr>
+        <tr><td><code>background-size: cover</code></td><td>Escala la imagen para cubrir toda la celda; puede recortar parte.</td></tr>
+        <tr><td><code>background-position: center</code></td><td>Centra la imagen de fondo.</td></tr>
+        <tr><td><code>background-repeat: no-repeat</code></td><td>Evita que el fondo se repita como mosaico.</td></tr>
+        <tr><td><code>color: white</code></td><td>Define el color heredable del texto lateral.</td></tr>
+        <tr><td><code>border-radius: 8px</code></td><td>Redondea las esquinas.</td></tr>
+    </table>
+
+    <h2>4. Casos e imagenes</h2>
+    <h3><code>.tabla-casos</code></h3>
+    <table>
+        <tr><th>Regla</th><th>Funcion</th></tr>
+        <tr><td><code>table-layout: fixed</code></td><td>Calcula el ancho de las columnas usando las medidas declaradas, sin dejar que mucho texto cambie el reparto.</td></tr>
+        <tr><td><code>.celda-texto { width: 65%; }</code></td><td>Reserva el 65% para el texto.</td></tr>
+        <tr><td><code>.celda-imagen { width: 35%; }</code></td><td>Reserva el 35% para la imagen.</td></tr>
+    </table>
+    <p>Estas clases son mas explicitas que depender de <code>:first-child</code> o <code>:last-child</code>: describen directamente la funcion de cada celda.</p>
+
+    <h3>Alineacion y bordes</h3>
+    <table>
+        <tr><th>Clase</th><th>Regla</th><th>Resultado</th></tr>
+        <tr><td><code>.celda-superior-centrada</code></td><td><code>vertical-align: top; text-align: center</code></td><td>Coloca el contenido arriba y lo centra horizontalmente.</td></tr>
+        <tr><td><code>.celda-visible</code></td><td><code>border: 2px solid #044708; border-radius: 8px</code></td><td>Añade un borde verde continuo y redondea las esquinas.</td></tr>
+    </table>
+
+    <h3>Imagenes de personas y casos</h3>
+    <table>
+        <tr><th>Selector</th><th>Regla</th><th>Funcion</th></tr>
+        <tr><td><code>.imagen-persona, .imagen-caso</code></td><td><code>width: 300px; height: 300px</code></td><td>Forma un cuadro fijo de 300 por 300 píxeles.</td></tr>
+        <tr><td><code>object-fit: contain</code></td><td>Conserva la proporcion y muestra la imagen completa dentro del cuadro.</td><td>Puede dejar espacio vacio, pero evita deformar la imagen.</td></tr>
+        <tr><td><code>.tabla-casos .imagen-caso</code></td><td><code>max-width: 100%</code></td><td>Impide que la imagen supere el ancho de su celda.</td></tr>
+    </table>
+
+    <h2>5. Anuncios del <code>aside</code></h2>
+    <h3><code>.anuncio</code></h3>
+    <table>
+        <tr><th>Regla</th><th>Funcion</th></tr>
+        <tr><td><code>height: 100%</code></td><td>Intenta ocupar toda la altura disponible de su fila.</td></tr>
+        <tr><td><code>box-sizing: border-box</code></td><td>Hace que el ancho y alto incluyan el <code>padding</code> y el borde.</td></tr>
+        <tr><td><code>padding: 5px</code></td><td>Deja 5 píxeles entre el contenido y el borde.</td></tr>
+        <tr><td><code>border-radius: 8px</code></td><td>Redondea las esquinas de la celda.</td></tr>
+        <tr><td><code>text-align: center</code></td><td>Centra horizontalmente el contenido textual y en linea.</td></tr>
+    </table>
+
+    <h3><code>aside</code> y <code>.tabla-anuncios</code></h3>
+    <table>
+        <tr><th>Selector</th><th>Regla</th><th>Funcion</th></tr>
+        <tr><td><code>aside</code></td><td><code>height: 100%</code></td><td>Intenta ocupar toda la altura de su celda.</td></tr>
+        <tr><td><code>aside</code></td><td><code>background: transparent</code></td><td>Deja transparente el panel; el fondo visible esta en <code>.columna-lateral</code>.</td></tr>
+        <tr><td><code>.tabla-anuncios</code></td><td><code>height: 100%; table-layout: fixed</code></td><td>Ocupa la altura disponible y mantiene un reparto estable.</td></tr>
+        <tr><td><code>.tabla-anuncios tr</code></td><td><code>height: 12.5%</code></td><td>Asigna una octava parte a cada fila porque actualmente hay ocho anuncios.</td></tr>
+    </table>
+
+    <h3><code>.anuncio img</code></h3>
+    <table>
+        <tr><th>Regla</th><th>Funcion</th></tr>
+        <tr><td><code>width: 100%; height: 100%</code></td><td>Hace que la imagen intente llenar la celda.</td></tr>
+        <tr><td><code>object-fit: cover</code></td><td>Llena el cuadro sin deformar la imagen, aunque puede recortar sus bordes.</td></tr>
+        <tr><td><code>border-radius: 4px</code></td><td>Redondea ligeramente las esquinas.</td></tr>
+    </table>
+
+    <h2>6. Encabezado, navegacion y pie</h2>
+    <h3><code>.fondo-matrix</code></h3>
+    <p>Esta clase se reutiliza en <code>header</code>, <code>nav</code> y <code>footer</code>.</p>
+    <table>
+        <tr><th>Regla</th><th>Funcion</th></tr>
+        <tr><td><code>background-image</code></td><td>Carga <code>the-hacker-matrix.gif</code>.</td></tr>
+        <tr><td><code>background-size: cover</code></td><td>Hace que el fondo cubra todo el elemento.</td></tr>
+        <tr><td><code>background-position: center</code></td><td>Centra el fondo.</td></tr>
+        <tr><td><code>background-repeat: no-repeat</code></td><td>Impide que el fondo se repita.</td></tr>
+    </table>
+    <table>
+        <tr><th>Selector</th><th>Reglas principales</th><th>Funcion</th></tr>
+        <tr><td><code>header</code></td><td><code>color: white; padding: 0; text-align: center; font-size: 1.5rem</code></td><td>Texto blanco, sin relleno, centrado y ampliado.</td></tr>
+        <tr><td><code>header h1</code></td><td><code>margin: 0</code></td><td>Elimina el margen predeterminado del titulo.</td></tr>
+        <tr><td><code>nav</code></td><td><code>color: white; line-height: 1; padding: 15px</code></td><td>Texto blanco, lineas compactas y espacio interior.</td></tr>
+        <tr><td><code>footer</code></td><td><code>color: white; padding: 10px 0</code></td><td>Texto blanco y 10 píxeles arriba y abajo.</td></tr>
+        <tr><td><code>.tabla-footer</code></td><td><code>width: 100%</code></td><td>Tabla interna del footer a todo el ancho.</td></tr>
+        <tr><td><code>.tabla-footer td</code></td><td><code>padding: 0 15px</code></td><td>Espacio horizontal dentro de sus celdas.</td></tr>
+    </table>
+
+    <h3>Enlaces del menu</h3>
+    <table>
+        <tr><th>Selector</th><th>Regla</th><th>Funcion</th></tr>
+        <tr><td><code>nav a</code></td><td><code>color: inherit</code></td><td>Hace que el enlace herede el blanco de <code>nav</code>.</td></tr>
+        <tr><td><code>nav a</code></td><td><code>text-decoration: none</code></td><td>Quita el subrayado.</td></tr>
+        <tr><td><code>nav a</code></td><td><code>font-weight: bold</code></td><td>Usa negrita.</td></tr>
+        <tr><td><code>nav a</code></td><td><code>font-size: 1.1rem</code></td><td>Usa 1.1 veces el tamaño de fuente de <code>html</code>.</td></tr>
+        <tr><td><code>nav a</code></td><td><code>transition: color 1s ease</code></td><td>Suaviza durante un segundo el cambio de color.</td></tr>
+        <tr><td><code>nav a:hover</code></td><td><code>color: #2980b9</code></td><td>Cambia el color mientras el cursor esta sobre el enlace. <code>:hover</code> es una pseudo-clase.</td></tr>
+    </table>
+
+    <h2>7. Texto, herencia y cascada</h2>
+    <table>
+        <tr><th>Selector</th><th>Regla</th><th>Funcion</th></tr>
+        <tr><td><code>p</code></td><td><code>color: black</code></td><td>Define en negro todos los parrafos.</td></tr>
+        <tr><td><code>.pagina td p</code></td><td><code>padding: 25px</code></td><td>Añade espacio interior a los parrafos dentro de celdas de <code>.pagina</code>.</td></tr>
+        <tr><td><code>footer p</code></td><td><code>margin: 0; font-size: 0.95rem; color: inherit</code></td><td>Quita margen, reduce tamaño y hereda el color del footer.</td></tr>
+        <tr><td><code>footer .tabla-footer p</code></td><td><code>padding: 0</code></td><td>Evita que los parrafos del footer reciban los 25 píxeles generales.</td></tr>
+        <tr><td><code>h2</code></td><td><code>color: black; text-align: center; font-weight: bold; font-size: 1.9rem</code></td><td>Configura los titulos de segundo nivel.</td></tr>
+        <tr><td><code>li</code></td><td><code>color: black</code></td><td>Configura el texto de los elementos de listas.</td></tr>
+    </table>
+    <div class="note"><strong>Herencia:</strong> <code>color</code>, <code>font-family</code> y <code>line-height</code> pueden pasar del padre a sus hijos. <code>inherit</code> lo solicita explicitamente. El <code>padding</code>, el <code>margin</code>, el ancho y el alto no se heredan normalmente.</div>
+    <p><strong>Cascada:</strong> si varias reglas afectan al mismo elemento, el navegador compara especificidad, orden y prioridad. <code>footer .tabla-footer p</code> es mas especifico que <code>.pagina td p</code>, por eso puede cambiar su <code>padding</code> a cero.</p>
+
+    <h2>8. Etiquetas HTML relacionadas</h2>
+    <table>
+        <tr><th>Etiqueta</th><th>Funcion</th></tr>
+        <tr><td><code>body</code></td><td>Contiene todo lo visible.</td></tr>
+        <tr><td><code>table</code></td><td>Representa una tabla.</td></tr>
+        <tr><td><code>tr</code></td><td>Representa una fila.</td></tr>
+        <tr><td><code>td</code></td><td>Representa una celda de datos.</td></tr>
+        <tr><td><code>tbody</code></td><td>Representa el cuerpo de una tabla; el navegador suele insertarlo automaticamente.</td></tr>
+        <tr><td><code>header</code></td><td>Representa el encabezado.</td></tr>
+        <tr><td><code>nav</code></td><td>Contiene enlaces de navegacion.</td></tr>
+        <tr><td><code>main</code></td><td>Contiene el contenido principal.</td></tr>
+        <tr><td><code>section</code></td><td>Agrupa una seccion tematica.</td></tr>
+        <tr><td><code>article</code></td><td>Representa contenido independiente.</td></tr>
+        <tr><td><code>aside</code></td><td>Contiene contenido lateral o complementario.</td></tr>
+        <tr><td><code>footer</code></td><td>Representa el pie de pagina.</td></tr>
+        <tr><td><code>h1</code>, <code>h2</code></td><td>Representan titulos de distinto nivel.</td></tr>
+        <tr><td><code>p</code></td><td>Representa un parrafo.</td></tr>
+        <tr><td><code>ul</code>, <code>ol</code>, <code>li</code></td><td>Representan listas y sus elementos.</td></tr>
+        <tr><td><code>figure</code>, <code>figcaption</code></td><td>Agrupan una imagen y su leyenda.</td></tr>
+        <tr><td><code>img</code></td><td>Muestra una imagen. <code>src</code> indica la ruta y <code>alt</code> la describe.</td></tr>
+        <tr><td><code>a</code></td><td>Representa un enlace. <code>href</code> indica el destino y <code>target="_blank"</code> solicita otra pestaña.</td></tr>
+    </table>
+
+    <h2>9. Unidades y terminos frecuentes</h2>
+    <table>
+        <tr><th>Termino</th><th>Significado</th></tr>
+        <tr><td><code>px</code></td><td>Pixeles; medida fija.</td></tr>
+        <tr><td><code>%</code></td><td>Porcentaje relativo al tamaño disponible del elemento padre.</td></tr>
+        <tr><td><code>rem</code></td><td>Unidad relativa al tamaño de fuente del elemento raiz <code>html</code>.</td></tr>
+        <tr><td><code>transparent</code></td><td>No pinta un color visible.</td></tr>
+        <tr><td><code>cover</code></td><td>Cubre el contenedor y puede recortar la imagen.</td></tr>
+        <tr><td><code>contain</code></td><td>Muestra toda la imagen y puede dejar espacio vacio.</td></tr>
+        <tr><td><code>inherit</code></td><td>Usa el valor heredado del elemento padre.</td></tr>
+        <tr><td><code>solid</code></td><td>Tipo de borde continuo.</td></tr>
+    </table>
+</main>
+</body>
+</html>

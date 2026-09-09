@@ -10,12 +10,12 @@
 
 
 <body>
-<table border="1" width="100%" cellspacing="0" cellpadding="10">
+<table class="pagina">
 
     <!-- Encabezado -->
     <tr>
         <td>
-            <header>
+            <header class="fondo-matrix">
                 <h1>HACKING ÉTICO</h1>
             </header>
         </td>
@@ -24,12 +24,13 @@
     <!-- navegacion -->
     <tr>
         <td>
-            <nav>
-                <table width="100%">
+            <nav class="fondo-matrix">
+                <table class="tabla-navegacion">
                     <tr>
-                        <td align="center"><a href="index.html">Inicio</a></td>
-                        <td align="center"><a href="certificaciones.html">Certificaciones</a></td>
-                        <td align="center"><a href="historia.html">Historia</a></td>
+                        <td class="celda-centrada"><a href="index.html">Inicio</a></td>
+                        <td class="celda-centrada"><a href="certificaciones.html">Certificaciones</a></td>
+                        <td class="celda-centrada"><a href="historia.html">Historia</a></td>
+                        <td class="celda-centrada"><a href="documentacion-style-css.html">Documentación CSS</a></td>
                     </tr>
                 </table>
             </nav>
@@ -39,12 +40,12 @@
     <!-- Contenido principal -->
 <tr>
     <td>
-      <table width="100%">
+      <table class="tabla-completa">
         <tr>
           <!-- Columna izquierda: main -->
-          <td width="75%" valign="top">
+          <td class="columna-contenido">
             <main>
-              <table width="100%">
+              <table class="tabla-completa">
 
                 <tr>
                   <td>
@@ -76,27 +77,75 @@
                   <td>
                     <section>
                       <h2>Mayores Exponentes del Hacking Ético</h2>
-                      <table width="100%">
+                      <p>Entre los exponentes más destacados del hacking ético se encuentran:</p>
+                          <table class="tabla-completa tabla-casos">
                         <tr>
-                            <td>
+                            <td class="celda-texto">
                                 <article>
-                                    <p>Entre los exponentes más destacados del hacking ético se encuentran:</p>
                                     <ul>
                                         <li><strong>Adrian Lamo:</strong> Conocido como el "hacker sin hogar", quien se infiltró en redes de corporaciones
                                         como Microsoft, Yahoo! y The New York Times, y reportó vulnerabilidades; aunque su legado es
                                         controvertido por denunciar a Chelsea Manning, es recordado por su enfoque técnico y
                                         la delgada línea entre la ética personal y la seguridad nacional.</li>
+                                    </ul>
+                                </article>
+                            </td>
+                            <td class="celda-imagen celda-superior-centrada celda-visible">
+                              <figure>
+                                <img class="imagen-persona" src="imagenes/adrianlamo.jpg" alt="Retrato de Adrian Lamo">
+                                <figcaption>Adrian Lamo</figcaption>
+                              </figure>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="celda-texto">
+                                <article>
+                                    <ul>
                                         <li><strong>Anand Prakash:</strong> un hacker ético que en 2018 descubrió una
                                         vulnerabilidad en la aplicación de Uber que permitía viajes gratuitos, recibiendo una recompensa
                                         de 6.500 dólares por reportarlo.</li>
+                                    </ul>
+                                </article>
+                            </td>
+                            <td class="celda-imagen celda-superior-centrada celda-visible">
+                              <figure>
+                                <img class="imagen-persona" src="imagenes/Anand Prakash.jpg" alt="Retrato de Anand Prakash">
+                                <figcaption>Anand Prakash</figcaption>
+                              </figure>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="celda-texto">
+                                <article>
+                                    <ul>
                                         <li><strong>Guacamaya Leaks:</strong> un grupo de hackers éticos que en 2020 filtró información
                                         del ejército de México para exponer casos de corrupción y violaciones de derechos humanos.</li>
+                                    </ul>
+                                </article>
+                            </td>
+                            <td class="celda-imagen celda-superior-centrada celda-visible">
+                              <figure>
+                                <img class="imagen-persona" src="imagenes/Guacamaya.jpg" alt="Imagen relacionada con Guacamaya Leaks">
+                                <figcaption>Guacamaya Leaks</figcaption>
+                              </figure>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <article>
+                                    <ul>
                                         <li><strong>John Draper (alias Captain Crunch):</strong> quien en 1971
                                         informó a la compañía telefónica sobre una vulnerabilidad en el sistema de llamadas,
                                         marcando uno de los primeros casos de hacking ético al priorizar la corrección del
                                         problema sobre el beneficio personal.</li>
                                     </ul>
                                 </article>
+                            </td>
+                            <td class="celda-superior-centrada celda-visible">
+                              <figure>
+                                <img class="imagen-persona" src="imagenes/John Draper.jpg" alt="Retrato de John Draper, conocido como Captain Crunch">
+                                <figcaption>John Draper (alias Captain Crunch)</figcaption>
+                              </figure>
                             </td>
                         </tr>
                       </table>
@@ -108,34 +157,71 @@
                   <td>
                     <section>
                       <h2>Casos de Mayor Relevancia</h2>
-                      <table width="100%">
+                          <table class="tabla-completa tabla-casos">
                         <tr>
-                            <td>
+                            <td class="celda-texto">
                                 <article>
-                                    <ol>
-                                    <li><b>Ataque Global WannaCry (2017)</b></li>
+                                  <ol start="1">
+                                    <li><strong>Ataque Global WannaCry (2017)</strong>
                                     <ul>
                                         <li><b>La Amenaza:</b> Un virus secuestra hospitales, bancos y Gobiernos en 150 países. El caos es total. </li>
                                         <li><b>El Giro Épico:</b> Un joven analista británico de 22 años examina el código desde su habitación. </li>
                                         <li><b>El Descubrimiento:</b> Encuentra un "interruptor de apagado" en el código del virus. </li>
                                         <li><b>El Impacto:</b> El joven salva a millones de personas y se convierte en un héroe global. </li>
                                     </ul>
-                                    <li><b>La Leyenda de Kevin Mitnick</b></li>
+                                    </li>
+                                  </ol>
+                                </article>
+                            </td>
+                            <td class="celda-superior-centrada celda-visible celda-imagen">
+                              <figure>
+                                <img class="imagen-caso" src="imagenes/WannaCry.jpg" alt="Imagen representativa del ataque WannaCry">
+                                <figcaption>WannaCry</figcaption>
+                              </figure>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="celda-texto">
+                                <article>
+                                  <ol start="2">
+                                    <li><strong>La Leyenda de Kevin Mitnick</strong>
                                     <ul>
                                         <li><b>El Pasado:</b> El hacker más buscado del planeta en los años 90. Capaz de hackear al Pentágono con una llamada. </li>
                                         <li><b>La Captura:</b> Persecuciones de película, años de prisión y la prohibición total de tocar un teclado. </li>
                                         <li><b>La Redención:</b> El villano se pasa al bando de los buenos. </li>
-                                        <li><b>El Espectáculo:</b> Funda su propia firma de seguridad, demostrando a las empresas cómo sus propios empleados caen ante la ingeniería social. </li>
+                                        <li><b>El Espectáculo:</b> Funda su propia firma de seguridad, demostrando a las empresas cómo sus propios empleados caen ante la ingeniería social.</li>
                                     </ul>
-                                    <li><b>El Imperio de los Bug Bounties</b></li>
+                                    </li>
+                                  </ol>
+                                </article>
+                            </td>
+                            <td class="celda-superior-centrada celda-visible celda-imagen">
+                              <figure>
+                                <img class="imagen-caso" src="imagenes/Kevin.jpg" alt="Retrato de Kevin Mitnick">
+                                <figcaption>Kevin Mitnick</figcaption>
+                              </figure>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="celda-texto">
+                                <article>
+                                  <ol start="3">
+                                    <li><strong>El Imperio de los Bug Bounties</strong>
                                     <ul>
                                         <li><b>El Trato:</b> Las mentes más brillantes del planeta contra las corporaciones más ricas. </li>
                                         <li><b>La Dinámica:</b> Google, Apple y Meta abren sus puertas virtuales a los hackers. </li>
                                         <li><b>El Botín: </b> Quien encuentre una grieta secreta gana millones de dólares en minutos. </li>
                                         <li><b>El Impacto: </b> El hacking ético se convierte en una profesión legal, millonaria y de alto estatus. </li>
                                     </ul>
+                                    </li>
                                   </ol>
                                 </article>
+                            </td>
+                            <td class="celda-superior-centrada celda-visible celda-imagen">
+                              <figure>
+                                <img class="imagen-caso" src="imagenes/BugBounties.jpg" alt="Imagen representativa de los programas Bug Bounty">
+                                <figcaption>Bug Bounties</figcaption>
+                              </figure>
                             </td>
                         </tr>
                       </table>
@@ -148,13 +234,66 @@
           </td>
 
           <!-- Columna derecha: aside -->
-          <td width="15%" valign="top">
+          <td class="columna-lateral">
             <aside>
-              <div class="anuncio">
-                <a href="https://defensoresdelapatria.com/" target="_blank">
-                  <img src="imagenes/presi.jpg" alt="Anuncio publicitario">
-                </a>
-              </div>
+              <table class="tabla-anuncios">
+                <tr>
+                  <td class="anuncio">
+                    <a href="https://defensoresdelapatria.com/" target="_blank">
+                        <img src="imagenes/presi.jpg" alt="Anuncio político">
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="anuncio">
+                    <a href="https://defensoresdelapatria.com/" target="_blank">
+                        <img src="imagenes/poloPolo.jpg" alt="Anuncio político">
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="anuncio">
+                    <a href="https://defensoresdelapatria.com/" target="_blank">
+                        <img src="imagenes/vickyYcabal.jpg" alt="Anuncio político">
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="anuncio">
+                    <a href="https://defensoresdelapatria.com/" target="_blank">
+                        <img src="imagenes/AlvaroUribeMewing.jpg" alt="Anuncio político">
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="anuncio">
+                    <a href="https://defensoresdelapatria.com/" target="_blank">
+                        <img src="imagenes/footer-patria-milagro.jpg" alt="Anuncio político">
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="anuncio">
+                    <a href="https://defensoresdelapatria.com/" target="_blank">
+                        <img src="imagenes/Colombia Union GIF by LIGA Rodolfo Hernandez.gif" alt="Animación política de Colombia">
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="anuncio">
+                    <a href="https://defensoresdelapatria.com/" target="_blank">
+                        <img src="imagenes/firme-por-la-patria-colombia.gif" alt="Animación política sobre Colombia">
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="anuncio">
+                    <a href="https://defensoresdelapatria.com/" target="_blank">
+                        <img src="imagenes/tigre-abelardo-de-la-espriella.gif" alt="Animación política">
+                    </a>
+                  </td>
+                </tr>
+              </table>
             </aside>
           </td>
         </tr>
@@ -164,22 +303,20 @@
   
     <!-- Pie de página -->
     <tr>
-        <td>
-            <footer>
-               <footer>
-                <table width="100%" cellpadding="10" cellspacing="0">
-                    <tr>
-                        <td align="left">
-                            <p>Hacking Ético</p>
-                        </td>
-                        <td align="right">
-                            <p>Seguridad • Ética • Tecnología</p>
-                        </td>
-                    </tr>
-                </table>
-            </footer>
-            </footer>
-        </td>
+    <td>
+        <footer class="fondo-matrix">
+            <table class="tabla-footer">
+                <tr>
+                  <td class="celda-izquierda">
+                      <p>Hacking Ético</p>
+                  </td>
+                  <td class="celda-derecha">
+                      <p>Seguridad • Ética • Tecnología</p>
+                  </td>
+                </tr>
+            </table>
+        </footer>
+    </td>
     </tr>
 </table>
 </body>
