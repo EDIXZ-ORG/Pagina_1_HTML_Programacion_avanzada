@@ -7,28 +7,39 @@ body {
 }
 
 table {
-    border-spacing: 0;
+    border-collapse: collapse;
 }
 
-td,
-th {
-    border: none;
-}
+
 
 .pagina {
     width: 100%;
-    border: 1px solid #333333;
-    border-spacing: 0;
 }
 
 .pagina > tbody > tr > td {
-    padding: 10px;
+    padding: 0;
 }
 
 .tabla-completa,
 .tabla-navegacion,
 .tabla-anuncios {
     width: 100%;
+}
+
+.tabla-navegacion td {
+    padding: 0 15px;
+}
+
+.tabla-casos {
+    table-layout: fixed;
+}
+
+.tabla-casos .celda-texto {
+    width: 65%;
+}
+
+.tabla-casos .celda-imagen {
+    width: 35%;
 }
 
 .columna-contenido,
@@ -63,7 +74,6 @@ th {
 
 .tabla-footer {
     width: 100%;
-    border-collapse: collapse;
 }
 
 .fondo-matrix {
@@ -80,13 +90,14 @@ header {
     font-size: 1.5rem;
 }
 
+header h1 {
+    margin: 0;
+}
+
 nav {
     color: white;
     line-height: 1;
     padding: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
 }
 
 nav a {
@@ -103,20 +114,31 @@ nav a:hover{
 
 footer {
     color: white;
-    padding: 0;
+    padding: 10px 0;
 }
 
 .tabla-footer td {
-    padding: 12px 15px;
+    padding: 0 15px;
 }
+
+
 
 footer p {
     margin: 0;
     font-size: 0.95rem;
+    color: inherit;
 }
 
 p{
     color: black;
+}
+
+.pagina td p {
+    padding: 25px;
+}
+
+footer .tabla-footer p {
+    padding: 0;
 }
 
 h2 {
@@ -125,9 +147,7 @@ h2 {
     font-weight: bold;
     font-size: 1.9rem;
 }
-a {
-    color: rgba(4, 114, 0, 0.555);
-}
+
 
 li {
     color: black;
@@ -150,15 +170,15 @@ li {
     height: auto;
 }
 
-.imagen-adrian {
-    width: 50%;
-    height: auto;
-}
-
 .imagen-persona,
 .imagen-caso {
-    width: 70%;
-    height: auto;
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+
+.tabla-casos .imagen-caso {
+    max-width: 100%;
 }
 
 aside {
